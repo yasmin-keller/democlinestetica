@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
-import desktop from "@/assets/abertura-desktop.webp.asset.json";
 import mobile from "@/assets/abertura-mobile.webp.asset.json";
+import { Sparkles, Droplet, Waves, Leaf, type LucideIcon } from "lucide-react";
 import { WHATSAPP_URL, DEMO_NOTICE } from "@/config/site";
 
 const TITLE = "Ateliê Sereno · Estética — Projeto demonstrativo | Santos";
@@ -23,14 +23,11 @@ export const Route = createFileRoute("/")({
 
 const CTA = "Solicitar avaliação pelo WhatsApp";
 const btn = "inline-flex min-h-11 items-center justify-center rounded-lg bg-primary px-6 py-3 font-medium text-primary-foreground transition-opacity hover:opacity-90";
-const Icon = ({ d }: { d: string }) => (
-  <svg viewBox="0 0 24 24" className="h-8 w-8 text-accent" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={d} /></svg>
-);
-const treatments = [
-  ["Limpeza de pele", "Higienização profunda da pele do rosto, com cosméticos indicados após avaliação.", "M12 3c4 4 6 7 6 10a6 6 0 0 1-12 0c0-3 2-6 6-10z"],
-  ["Hidratação facial", "Cuidado com cosméticos hidratantes, escolhidos de acordo com o seu tipo de pele.", "M12 21a7 7 0 0 0 7-7c0-4-7-11-7-11S5 10 5 14a7 7 0 0 0 7 7zM9 14a3 3 0 0 0 3 3"],
-  ["Drenagem linfática", "Técnica manual com movimentos suaves, feita após avaliação.", "M3 8c3-2 6 2 9 0s6-2 9 0M3 13c3-2 6 2 9 0s6-2 9 0M3 18c3-2 6 2 9 0s6-2 9 0"],
-  ["Massagem relaxante", "Um momento de pausa, com técnica manual e ambiente tranquilo.", "M12 20c-5 0-8-3-8-7 3 0 6 1 8 4 2-3 5-4 8-4 0 4-3 7-8 7zM12 17V9M12 9c-2-2-2-4 0-6 2 2 2 4 0 6z"],
+const treatments: [string, string, LucideIcon][] = [
+  ["Limpeza de pele", "Higienização profunda da pele do rosto, com cosméticos indicados após avaliação.", Sparkles],
+  ["Hidratação facial", "Cuidado com cosméticos hidratantes, escolhidos de acordo com o seu tipo de pele.", Droplet],
+  ["Drenagem linfática", "Técnica manual com movimentos suaves, feita após avaliação.", Waves],
+  ["Massagem relaxante", "Um momento de pausa, com técnica manual e ambiente tranquilo.", Leaf],
 ];
 const steps = [
   "Você chama no WhatsApp e agenda uma avaliação.",
@@ -73,7 +70,7 @@ function Index() {
       </header>
 
       <main className="pt-44 md:pt-28">
-        <section id="inicio" className="mx-auto grid max-w-6xl items-center gap-10 px-5 pb-20 pt-8 md:grid-cols-2 md:pt-16">
+        <section id="inicio" className="mx-auto grid max-w-6xl items-center gap-10 px-5 pb-20 pt-8 md:grid-cols-2 md:pb-12 md:pt-6">
           <div className="reveal">
             <p className="mb-4 text-sm uppercase tracking-[0.2em] text-muted-foreground">Ateliê Sereno · Estética</p>
             <h1 className="text-5xl md:text-6xl">Cuidados estéticos com calma, avaliação e atenção a você</h1>
@@ -84,17 +81,16 @@ function Index() {
             </div>
           </div>
           <picture>
-            <source media="(min-width: 768px)" srcSet={desktop.url} />
-            <img src={mobile.url} alt="Imagem ilustrativa: sala de atendimento estético com maca, toalhas e plantas, iluminada por luz natural." width={928} height={1152} fetchPriority="high" className="aspect-[4/5] w-full rounded-lg object-cover object-center md:aspect-[4/5]" />
+            <img src={mobile.url} alt="Imagem ilustrativa: sala de atendimento estético com maca, toalhas e plantas, iluminada por luz natural." width={928} height={1152} fetchPriority="high" className="aspect-[4/5] max-h-[75vh] w-full max-w-[928px] rounded-lg object-cover object-center md:ml-auto md:w-auto" />
           </picture>
         </section>
 
         <Section id="tratamentos" alt>
           <h2 className="text-4xl md:text-5xl">Tratamentos</h2>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {treatments.map(([n, t, d]) => d && (
+            {treatments.map(([n, t, I]) => (
               <article key={n} className="rounded-lg border border-border bg-background p-6">
-                <Icon d={d} />
+                <I className="h-8 w-8 text-accent" strokeWidth={1.2} aria-hidden="true" />
                 <h3 className="mt-5 text-2xl">{n}</h3>
                 <p className="mt-2 text-muted-foreground">{t}</p>
               </article>
@@ -120,7 +116,7 @@ function Index() {
             <div aria-hidden="true" className="flex h-28 w-28 shrink-0 items-center justify-center rounded-full border border-accent bg-background font-display text-4xl text-primary">AS</div>
             <div>
               <h2 className="text-4xl md:text-5xl">Responsável técnica</h2>
-              <p className="mt-4 text-lg">Responsável técnica: [nome demonstrativo], esteticista e cosmetóloga [demonstrativo]</p>
+              <p className="mt-4 text-lg">[nome demonstrativo] · esteticista e cosmetóloga [demonstrativo]</p>
               <p className="mt-2 text-muted-foreground">Cada tratamento é indicado após avaliação individual.</p>
             </div>
           </div>

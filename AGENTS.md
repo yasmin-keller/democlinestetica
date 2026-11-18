@@ -28,3 +28,5 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+- Keep this single-page editorial composition in the index route, using shared section spacing and responsive picture sources, so all sections follow one layout rhythm without duplicating pages.

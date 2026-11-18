@@ -149,7 +149,7 @@ function Index() {
         <Section id="sobre">
           <div className="grid items-center gap-10 md:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] md:gap-16">
             <picture className="block aspect-[4/5] max-h-[560px] overflow-hidden rounded-2xl">
-              <img src={mobile.url} alt={ALT} width={928} height={1152} loading="lazy" className="h-full w-full object-cover object-center" />
+              <img src="/atelie-detalhe.webp" alt="Imagem ilustrativa: toalhas enroladas, vaso com eucalipto e potes de vidro âmbar sobre mesa de madeira clara." width={928} height={1152} loading="lazy" className="h-full w-full object-cover object-center" />
             </picture>
             <div>
               <Eyebrow>O ateliê</Eyebrow>

@@ -90,15 +90,14 @@ function Index() {
 
         <Section id="tratamentos" alt>
           <h2 className="text-center text-4xl md:text-5xl">Tratamentos</h2>
-          <ol className="mt-12 border-t border-border md:mt-16">
-            {treatments.map(([n, t], i) => (
-              <li key={n} className="grid grid-cols-[48px_minmax(0,1fr)] items-baseline gap-x-4 gap-y-3 border-b border-border py-8 md:grid-cols-[80px_minmax(0,1fr)_minmax(0,1fr)] md:gap-x-8 md:py-10">
-                <span className="font-display text-3xl text-accent md:text-5xl">{String(i + 1).padStart(2, "0")}</span>
+          <ul className="mt-12 border-t border-border md:mt-16">
+            {treatments.map(([n, t]) => (
+              <li key={n} className="grid grid-cols-1 items-baseline gap-y-3 border-b border-border py-8 md:grid-cols-2 md:gap-x-12 md:py-10">
                 <h3 className="text-3xl md:text-4xl">{n}</h3>
-                <p className="col-start-2 text-muted-foreground md:col-start-auto">{t}</p>
+                <p className="text-muted-foreground">{t}</p>
               </li>
             ))}
-          </ol>
+          </ul>
           <p className="mx-auto mt-8 max-w-[720px] text-center text-sm text-muted-foreground">Não realizamos procedimentos injetáveis. Os tratamentos usam cosméticos e equipamentos regularizados pela Anvisa. [demonstrativo]</p>
         </Section>
 

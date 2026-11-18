@@ -70,21 +70,22 @@ function Index() {
         </div>
       </header>
 
-      <main className="pt-[190px] md:pt-[150px]">
-        <section id="inicio" className="mx-auto max-w-[1240px] px-5 pb-[72px] pt-12 md:pb-[120px] md:pt-[72px]">
-          <div className="reveal text-center">
-            <p className="mb-6 text-sm uppercase text-muted-foreground">Ateliê Sereno · Estética</p>
-            <h1 className="editorial-title mx-auto max-w-[1080px] text-[32px] leading-[1.12] min-[375px]:text-[40px] sm:text-6xl md:text-7xl lg:text-[80px]">Cuidados estéticos com calma, avaliação e atenção a você</h1>
-            <p className="mx-auto mt-7 max-w-[620px] text-lg text-muted-foreground">Tratamentos faciais e corporais com cosméticos, em Santos. Toda jornada começa com uma avaliação.</p>
+      <main>
+        <section id="inicio" className="relative isolate flex min-h-[100svh] items-center overflow-hidden px-5 pb-16 pt-[240px] md:pb-20 md:pt-[220px]">
+          <picture className="absolute inset-0 -z-20">
+            <source media="(min-width: 768px)" srcSet={desktop.url} width={1376} height={768} />
+            <img src={mobile.url} alt="Imagem ilustrativa: sala de atendimento estético com maca, toalhas e plantas, iluminada por luz natural." width={928} height={1152} fetchPriority="high" className="h-full w-full object-cover object-center" />
+          </picture>
+          <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-b from-[#2A2524]/45 via-[#2A2524]/55 to-[#2A2524]/65" />
+          <div className="reveal mx-auto w-full max-w-[920px] text-center text-white [text-shadow:0_1px_12px_rgba(0,0,0,0.25)]">
+            <p className="mb-5 text-sm uppercase tracking-[0.18em] text-white/90">Ateliê Sereno · Estética</p>
+            <h1 className="editorial-title mx-auto text-[34px] leading-[1.12] min-[375px]:text-[38px] sm:text-5xl md:text-6xl lg:text-[68px]">Cuidados estéticos com calma, avaliação e atenção a você</h1>
+            <p className="mx-auto mt-6 max-w-[600px] text-lg text-white/95">Tratamentos faciais e corporais com cosméticos, em Santos. Toda jornada começa com uma avaliação.</p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
               <Button asChild className={btn}><a href={WHATSAPP_URL}>{CTA}</a></Button>
-              <Button asChild variant="link" className="min-h-11 text-base text-foreground underline"><a href="#tratamentos">Ver tratamentos</a></Button>
+              <Button asChild variant="link" className="min-h-11 text-base text-white underline"><a href="#tratamentos">Ver tratamentos</a></Button>
             </div>
           </div>
-          <picture className="mt-12 block md:mt-16">
-            <source media="(min-width: 768px)" srcSet={desktop.url} width={1376} height={768} />
-            <img src={mobile.url} alt="Imagem ilustrativa: sala de atendimento estético com maca, toalhas e plantas, iluminada por luz natural." width={928} height={1152} fetchPriority="high" className="aspect-[4/5] w-full rounded-lg object-cover object-center md:aspect-video" />
-          </picture>
         </section>
 
         <Section id="tratamentos" alt>
